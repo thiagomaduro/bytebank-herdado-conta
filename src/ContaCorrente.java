@@ -1,20 +1,21 @@
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel{
 
 	/*
-	 * Quando herdo uma classe mãe, eu não herdo seu construtor! E como a classe
-	 * Conta não possui o construtor padrão, ou seja, eu criei um construtor com
+	 * Quando herdo uma classe mï¿½e, eu nï¿½o herdo seu construtor! E como a classe
+	 * Conta nï¿½o possui o construtor padrï¿½o, ou seja, eu criei um construtor com
 	 * regras, eu preciso declarar o mesmo metodo de entrada do seu construtor,
 	 * dentro do MEU ContaCorrente() e depois coloco dentro do meu construtor o
 	 * super(dentro exemplifico os atributos que coloquei dentro de MEU
-	 * ContaCorrente que é do Construtor da classe mãe).
+	 * ContaCorrente que ï¿½ do Construtor da classe mï¿½e).
 	 */
+	
 
 	public ContaCorrente(int agencia, int numero) {
 		super(agencia, numero);
 	}
 	
-	@Override //para sobreescrever um método
+	@Override //para sobreescrever um mï¿½todo
 	public boolean saca(double valor) {
 		double valorASacar = valor + 0.20;
 		return super.saca(valorASacar);
@@ -23,6 +24,12 @@ public class ContaCorrente extends Conta {
 	@Override
 	public void deposita(double valor) {
 		super.saldo += valor;
+		
+	}
+
+	@Override
+	public double getValorImposto() {
+		return 10;
 		
 	}
 	
