@@ -4,7 +4,7 @@ public class SeguroVida implements Tributavel {
 	@Override
 	public double getValorImposto() {
 		
-		return 0;
+		return 42;
 	}
 
 }
